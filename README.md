@@ -6,7 +6,7 @@
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=khromenokroman" alt="khromenokroman" /></a> </p>
 
 - 💬 Ask me about: roma55592@yandex.ru
-- 🌱 I’m currently learning **C++ stl 20 and kernel linux**
+- 🌱 I’m currently learning **C++ and kernel linux**
 - 🔭 I’m currently working on TCP/IP network
 
 <h3 align="left">Languages and Tools:</h3>
