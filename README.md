@@ -5,10 +5,6 @@
 
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=khromenokroman" alt="khromenokroman" /></a> </p>
 
-- 🔭 I’m currently working on **NGFW**
-
-- 🌱 I’m currently learning **networks**
-
 - 📫 How to reach me **https://t.me/KhromenokRoman**
 
 - ⚡ Fun fact **I do not know how c++ works**
