@@ -5,8 +5,6 @@
 
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=khromenokroman" alt="khromenokroman" /></a> </p>
 
-- 📫 How to reach me **https://t.me/KhromenokRoman**
-
 - ⚡ Fun fact **I do not know how c++ works**
 
 <h3 align="left">Connect with me:</h3>
