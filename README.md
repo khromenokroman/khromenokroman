@@ -5,8 +5,6 @@
 <h1 align="center">Hi 👋, I'm Roman</h1>
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=khromenokroman&label=Profile%20views&color=0e75b6&style=flat" alt="khromenokroman" /> </p>
 
-<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=khromenokroman" alt="khromenokroman" /></a> </p>
-
 - 🔭 I’m currently working on [ТехАргос](https://t-argos.ru/)
 
 - 📫 How to reach me **roma55592@yandex.ru**
