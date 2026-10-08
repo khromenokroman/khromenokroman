@@ -1,45 +1,66 @@
-<p align="center">
- <img width="600" src="snake.svg" alt="snake"/>
-</p>
+# Roman Khromenok
 
-<h1 align="center">Hi 👋, I'm Roman</h1>
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=khromenokroman&label=Profile%20views&color=0e75b6&style=flat" alt="khromenokroman" /> </p>
+**C++ developer · network software · DPDK · Linux**
 
-- 🔭 I’m currently working on [ТехАргос](https://t-argos.ru/)
+I build network software in C++ for Linux. At [T-Argos](https://t-argos.ru/) I work on a
+next-generation firewall (NGFW) with a DPDK data plane and a Clixon (NETCONF/RESTCONF/YANG)
+management plane: transceiver diagnostics, cluster session sync, DHCP relay, CPU isolation
+for the data plane, kernel modules and configuration migration between YANG model versions.
 
-- 📫 How to reach me **roma55592@yandex.ru**
+I also contribute upstream to the projects I use at work.
 
+## Open source contributions
 
-<h3 align="left">Languages and Tools:</h3>
-<table>
-  <tr>
-    <td align="center"><a href="https://www.arduino.cc/" target="_blank" rel="noreferrer"><img src="https://cdn.worldvectorlogo.com/logos/arduino-1.svg" alt="arduino" width="40" height="40"/></a></td>
-    <td align="center"><a href="https://www.gnu.org/software/bash/" target="_blank" rel="noreferrer"><img src="https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-icon.svg" alt="bash" width="40" height="40"/></a></td>
-    <td align="center"><a href="https://www.cprogramming.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" alt="c" width="40" height="40"/></a></td>
-    <td align="center"><a href="https://www.w3schools.com/cpp/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="cplusplus" width="40" height="40"/></a></td>
-    <td align="center"><a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/></a></td>
-    <td align="center"><a href="https://www.docker.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="docker" width="40" height="40"/></a></td>
-    <td align="center"><a href="https://git-scm.com/" target="_blank" rel="noreferrer"><img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/></a></td>
-    <td align="center"><a href="https://grafana.com" target="_blank" rel="noreferrer"><img src="https://www.vectorlogo.zone/logos/grafana/grafana-icon.svg" alt="grafana" width="40" height="40"/></a></td>
-    <td align="center"><a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/></a></td>
-    <td align="center"><a href="https://www.linux.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="linux" width="40" height="40"/></a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="https://www.microsoft.com/en-us/sql-server" target="_blank" rel="noreferrer"><img src="https://www.svgrepo.com/show/303229/microsoft-sql-server-logo.svg" alt="mssql" width="40" height="40"/></a></td>
-    <td align="center"><a href="https://www.mysql.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/></a></td>
-    <td align="center"><a href="https://www.postgresql.org" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="postgresql" width="40" height="40"/></a></td>
-    <td align="center"><a href="https://www.python.org" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/></a></td>
-    <td align="center"><a href="https://redis.io" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redis/redis-original-wordmark.svg" alt="redis" width="40" height="40"/></a></td>
-    <td align="center"><a href="https://www.selenium.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/detain/svg-logos/780f25886640cef088af994181646db2f6b1a3f8/svg/selenium-logo.svg" alt="selenium" width="40" height="40"/></a></td>
-    <td align="center"><a href="https://www.sqlite.org/" target="_blank" rel="noreferrer"><img src="https://www.vectorlogo.zone/logos/sqlite/sqlite-icon.svg" alt="sqlite" width="40" height="40"/></a></td>
-    <td align="center"><a href="https://www.vagrantup.com/" target="_blank" rel="noreferrer"><img src="https://www.vectorlogo.zone/logos/vagrantup/vagrantup-icon.svg" alt="vagrant" width="40" height="40"/></a></td>
-    <td align="center"></td>
-    <td align="center"></td>
-  </tr>
-</table>
+**[DPDK](https://www.dpdk.org/)** (`lib/ethdev`, `app/testpmd`), accepted into dpdk-next-net:
+- Public API to decode pluggable module EEPROM (SFP/QSFP): `rte_eth_module_eeprom_parse()`
+- SFF-8472 fixes: undefined behavior in external calibration, Rx power calibration, rounding
+- testpmd command `show port <id> module_eeprom decode`
+- In review: SFF-8636 per-lane LOS / LOL / Tx fault flags, SFF-8472 Rx LOS and Tx fault state
 
-<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=khromenokroman&show_icons=true&locale=en&layout=compact" alt="khromenokroman" /></p>
+[All DPDK patches](https://patches.dpdk.org/project/dpdk/list/?submitter=3957&state=*)
 
-<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=khromenokroman&show_icons=true&locale=en" alt="khromenokroman" /></p>
+**[Clixon](https://github.com/clicon/clixon)** (NETCONF/RESTCONF/YANG):
+- [Replace `select()` with `poll()` in the event loop](https://github.com/clicon/clixon/pull/584)
+- [`cli_start_program()`: run external programs (Python, Bash) from the CLI](https://github.com/clicon/clixon/pull/522)
+- In review: [XPath](https://github.com/clicon/clixon/pull/703) and
+  [leafref](https://github.com/clicon/clixon/pull/700) validation fixes,
+  [NACM group lookup helpers](https://github.com/clicon/clixon/pull/697)
 
-<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=khromenokroman&" alt="khromenokroman" /></p>
+**[CLIgen](https://github.com/clicon/cligen)**:
+[version target in Makefile](https://github.com/clicon/cligen/pull/118), Debian packages built in CI
+
+**[Eclipse iceoryx](https://github.com/eclipse-iceoryx/iceoryx)** (zero-copy IPC):
+[`ssize_t` refactoring for Windows compatibility](https://github.com/eclipse-iceoryx/iceoryx/pull/2342)
+
+## Selected projects
+
+| Project | Description |
+|---|---|
+| [dpdk_informer](https://github.com/khromenokroman/dpdk_informer) | C++ library that reports DPDK port state, link, hardware properties and Rx/Tx statistics as JSON |
+| [Interface_informer](https://github.com/khromenokroman/Interface_informer) | C++ library over netlink: interfaces, addresses, routes and ARP/NDP neighbors as JSON, network namespaces supported |
+| [net-map](https://github.com/khromenokroman/net-map) | Service that discovers hosts in local subnets with ARP, detects IP conflicts and DHCP servers, shows a web map |
+| [wifi-air](https://github.com/khromenokroman/wifi-air) | Terminal tool that shows Wi-Fi networks on air with the real occupied spectrum, to pick non-overlapping channels |
+| [vpn](https://github.com/khromenokroman/vpn) | VPN tunnel over TUN and UDP with XChaCha20-Poly1305 encryption, plus an [Android client](https://github.com/khromenokroman/vpn_android) |
+| [service-monitor](https://github.com/khromenokroman/service-monitor) | Web dashboard for systemd services over D-Bus and system resources from `/proc` and `/sys` |
+
+## Stack
+
+**Languages:** C++17/20, C, Python, Bash
+
+**Networking:** DPDK, netlink, ethtool, TCP/IP, VLAN, LACP, OSPF, VPN, SFF-8472/8636 transceivers,
+MikroTik (MTCNA), Cisco, Huawei
+
+**Management plane:** NETCONF, RESTCONF, YANG, Clixon, CLIgen, D-Bus
+
+**Linux:** kernel modules, io_uring, POSIX, systemd
+
+**Libraries:** Boost.Asio, nlohmann/json, spdlog, fmt, sdbus-c++
+
+**Tools:** CMake, GoogleTest, GitLab CI, Docker, Ansible, gdb, perf, Valgrind, tcpdump, Wireshark
+
+## Contact
+
+- Email: roma55592@yandex.ru
+- Telegram: [@KhromenokRoman](https://t.me/KhromenokRoman)
+
+<p><img src="https://github-readme-stats.vercel.app/api?username=khromenokroman&show_icons=true&locale=en" alt="GitHub stats" /></p>
