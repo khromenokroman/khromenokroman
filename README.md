@@ -1,3 +1,7 @@
+<p align="center">
+ <img width="600" src="snake.svg" alt="snake"/>
+</p>
+
 # Roman Khromenok
 
 **C++ developer · network software · DPDK · Linux**
