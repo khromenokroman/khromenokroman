@@ -22,11 +22,14 @@ I also contribute upstream to the projects I use at work.
   (fixes [#36440](https://github.com/systemd/systemd/issues/36440),
   [#36792](https://github.com/systemd/systemd/issues/36792))
 
-**[DPDK](https://www.dpdk.org/)** (`lib/ethdev`, `app/testpmd`), accepted into dpdk-next-net:
+**[DPDK](https://www.dpdk.org/)** (`lib/ethdev`, `app/testpmd`), 16 patches accepted into dpdk-next-net for DPDK 26.11:
 - Public API to decode pluggable module EEPROM (SFP/QSFP): `rte_eth_module_eeprom_parse()`
-- SFF-8472 fixes: undefined behavior in external calibration, Rx power calibration, rounding
 - testpmd command `show port <id> module_eeprom decode`
-- In review: SFF-8636 per-lane LOS / LOL / Tx fault flags, SFF-8472 Rx LOS and Tx fault state
+- SFF-8636 per-lane LOS / LOL / Tx fault flags, SFF-8472 Rx LOS and Tx fault state
+- Decoder fixes: out-of-bounds read of SFF-8636 thresholds, unaligned access, undefined behavior
+  in SFF-8472 external calibration, Rx power calibration and rounding
+- In review: newer SFF compliance codes (FC 1600/3200, 64GFC, SAS 24G), module EEPROM decoding
+  in `dpdk-proc-info`
 
 [All DPDK patches](https://patches.dpdk.org/project/dpdk/list/?submitter=3957&state=*)
 
