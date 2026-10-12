@@ -15,6 +15,13 @@ I also contribute upstream to the projects I use at work.
 
 ## Open source contributions
 
+**[systemd](https://github.com/systemd/systemd)** (`systemd-networkd`, `sd-dhcp-client`, `sd-dhcp6-client`), merged:
+- [networkd: follow system hostname changes in DHCP clients](https://github.com/systemd/systemd/pull/44116):
+  the new hostname is sent to DHCPv4/DHCPv6 servers without reconfiguring the interface, the DHCPv4
+  lease is renewed immediately, new `SendHostnameUpdates=` option
+  (fixes [#36440](https://github.com/systemd/systemd/issues/36440),
+  [#36792](https://github.com/systemd/systemd/issues/36792))
+
 **[DPDK](https://www.dpdk.org/)** (`lib/ethdev`, `app/testpmd`), accepted into dpdk-next-net:
 - Public API to decode pluggable module EEPROM (SFP/QSFP): `rte_eth_module_eeprom_parse()`
 - SFF-8472 fixes: undefined behavior in external calibration, Rx power calibration, rounding
