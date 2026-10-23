@@ -24,6 +24,12 @@ I also contribute upstream to the projects I use at work.
 - [networkd: renew DHCPv6 lease on hostname change and on `networkctl renew`](https://github.com/systemd/systemd/pull/44161):
   new `sd_dhcp6_client_send_renew()`, the new hostname reaches DHCPv6 servers immediately,
   `networkctl renew` now renews the DHCPv6 lease too
+- [networkd: request DHCPv6 information again on `networkctl renew`](https://github.com/systemd/systemd/pull/44352):
+  stateless DHCPv6 (Information-Request) clients refresh DNS/NTP servers on demand
+  instead of waiting for the information refresh time (one day by default)
+- [networkd: show why a link is still in the configuring state](https://github.com/systemd/systemd/pull/44168):
+  new `ConfiguringReasons` field in the Varlink `Describe` reply, shown by `networkctl status`
+  (fixes [#18222](https://github.com/systemd/systemd/issues/18222))
 
 **[DPDK](https://www.dpdk.org/)** (`lib/ethdev`, `app/testpmd`), 18 patches accepted into dpdk-next-net for DPDK 26.11:
 - Public API to decode pluggable module EEPROM (SFP/QSFP): `rte_eth_module_eeprom_parse()`
