@@ -30,6 +30,13 @@ I also contribute upstream to the projects I use at work.
 - [networkd: show why a link is still in the configuring state](https://github.com/systemd/systemd/pull/44168):
   new `ConfiguringReasons` field in the Varlink `Describe` reply, shown by `networkctl status`
   (fixes [#18222](https://github.com/systemd/systemd/issues/18222))
+- [networkd: enable IPv6 link-local addressing on WireGuard interfaces](https://github.com/systemd/systemd/pull/44367):
+  the address generation mode reset by the WireGuard driver on every link up is restored, so routing
+  protocols like Babel work over WireGuard out of the box
+  (fixes [#44005](https://github.com/systemd/systemd/issues/44005))
+- [DHCP server: do not refuse a host with a static lease whose client ID changed](https://github.com/systemd/systemd/pull/44188):
+  the host gets its static address again instead of being ignored until the old lease expires
+  (fixes [#44120](https://github.com/systemd/systemd/issues/44120))
 
 **[DPDK](https://www.dpdk.org/)** (`lib/ethdev`, `app/testpmd`), 18 patches accepted into dpdk-next-net for DPDK 26.11:
 - Public API to decode pluggable module EEPROM (SFP/QSFP): `rte_eth_module_eeprom_parse()`
