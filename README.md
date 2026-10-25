@@ -37,6 +37,9 @@ I also contribute upstream to the projects I use at work.
 - [DHCP server: do not refuse a host with a static lease whose client ID changed](https://github.com/systemd/systemd/pull/44188):
   the host gets its static address again instead of being ignored until the old lease expires
   (fixes [#44120](https://github.com/systemd/systemd/issues/44120))
+- [DHCP server: static leases by client identifier](https://github.com/systemd/systemd/pull/44409):
+  new `ClientIdentifier=`, `IAID=`, `DUIDType=` and `DUIDRawData=` options in `[DHCPServerStaticLease]`,
+  so hosts that share a hardware address (e.g. ipvlan in L2 mode) get their own static addresses
 
 **[DPDK](https://www.dpdk.org/)** (`lib/ethdev`, `app/testpmd`), 18 patches accepted into dpdk-next-net for DPDK 26.11:
 - Public API to decode pluggable module EEPROM (SFP/QSFP): `rte_eth_module_eeprom_parse()`
