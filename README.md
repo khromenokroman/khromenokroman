@@ -41,7 +41,7 @@ I also contribute upstream to the projects I use at work.
   new `ClientIdentifier=`, `IAID=`, `DUIDType=` and `DUIDRawData=` options in `[DHCPServerStaticLease]`,
   so hosts that share a hardware address (e.g. ipvlan in L2 mode) get their own static addresses
 
-**[DPDK](https://www.dpdk.org/)** (`lib/ethdev`, `app/testpmd`), 18 patches accepted into dpdk-next-net for DPDK 26.11:
+**[DPDK](https://www.dpdk.org/)** (`lib/ethdev`, `app/testpmd`), 18 patches merged into DPDK main for the 26.11 release (since v26.11-rc1):
 - Public API to decode pluggable module EEPROM (SFP/QSFP): `rte_eth_module_eeprom_parse()`
 - testpmd command `show port <id> module_eeprom decode`
 - SFF-8636 per-lane LOS / LOL / Tx fault flags, SFF-8472 Rx LOS and Tx fault state
