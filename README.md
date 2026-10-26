@@ -63,6 +63,12 @@ I also contribute upstream to the projects I use at work.
 **[CLIgen](https://github.com/clicon/cligen)**:
 [version target in Makefile](https://github.com/clicon/cligen/pull/118), Debian packages built in CI
 
+**[sdbus-c++](https://github.com/Kistler-Group/sdbus-cpp)** (C++ D-Bus library), merged:
+[`sdbus::Track` for tracking D-Bus peers](https://github.com/Kistler-Group/sdbus-cpp/pull/551):
+a wrapper over `sd_bus_track`, a service gets notified once its clients disconnect from the bus
+and releases resources held on their behalf (locks, sessions, subscriptions)
+(fixes [#57](https://github.com/Kistler-Group/sdbus-cpp/issues/57))
+
 **[Eclipse iceoryx](https://github.com/eclipse-iceoryx/iceoryx)** (zero-copy IPC):
 [`ssize_t` refactoring for Windows compatibility](https://github.com/eclipse-iceoryx/iceoryx/pull/2342)
 
