@@ -48,6 +48,7 @@ I also contribute upstream to the projects I use at work.
 - Newer SFF compliance codes: Fibre Channel 1600/3200/6400 MBytes/sec, SAS 12G/24G
 - Decoder fixes: out-of-bounds read of SFF-8636 thresholds, unaligned access, undefined behavior
   in SFF-8472 external calibration, Rx power calibration and rounding
+  (the out-of-bounds read and SFF-8472 calibration fixes are backported to the 24.11 LTS branch, 24.11.9)
 - In review: RFC to move the decoders into a new `lib/transceiver` library (to be maintained by me),
   module EEPROM decoding in `dpdk-proc-info`
 
