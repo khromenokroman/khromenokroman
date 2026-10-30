@@ -15,7 +15,7 @@ I also contribute upstream to the projects I use at work.
 
 ## Open source contributions
 
-**[systemd](https://github.com/systemd/systemd)** (`systemd-networkd`, `sd-dhcp-client`, `sd-dhcp6-client`), merged:
+**[systemd](https://github.com/systemd/systemd)** (`systemd-networkd`, `sd-dhcp-client`, `sd-dhcp6-client`, `systemd-userdbd`), merged:
 - [networkd: follow system hostname changes in DHCP clients](https://github.com/systemd/systemd/pull/44116):
   the new hostname is sent to DHCPv4/DHCPv6 servers without reconfiguring the interface, the DHCPv4
   lease is renewed immediately, new `SendHostnameUpdates=` option
@@ -40,6 +40,11 @@ I also contribute upstream to the projects I use at work.
 - [DHCP server: static leases by client identifier](https://github.com/systemd/systemd/pull/44409):
   new `ClientIdentifier=`, `IAID=`, `DUIDType=` and `DUIDRawData=` options in `[DHCPServerStaticLease]`,
   so hosts that share a hardware address (e.g. ipvlan in L2 mode) get their own static addresses
+- [userdbd: stop respawning workers when the worker binary is broken](https://github.com/systemd/systemd/pull/44516):
+  new `execvp_safe()` that does not run a truncated binary as an empty shell script via `/bin/sh`;
+  `systemd-userdbd`, `systemd-mountfsd` and `systemd-nsresourced` exit with an error instead of
+  respawning workers in a loop
+  (fixes [#44280](https://github.com/systemd/systemd/issues/44280))
 
 **[DPDK](https://www.dpdk.org/)** (`lib/ethdev`, `app/testpmd`), 18 patches merged into DPDK main for the 26.11 release (since v26.11-rc1):
 - Public API to decode pluggable module EEPROM (SFP/QSFP): `rte_eth_module_eeprom_parse()`
