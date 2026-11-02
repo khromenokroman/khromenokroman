@@ -45,6 +45,9 @@ I also contribute upstream to the projects I use at work.
   `systemd-userdbd`, `systemd-mountfsd` and `systemd-nsresourced` exit with an error instead of
   respawning workers in a loop
   (fixes [#44280](https://github.com/systemd/systemd/issues/44280))
+- [tree-wide: use `execvp_safe()` instead of `execvp()`, `execvpe()` and `execlp()`](https://github.com/systemd/systemd/pull/44543):
+  all remaining callers converted, so a truncated binary is never run as an empty shell script via `/bin/sh`;
+  scripts without a shebang (e.g. via `$SYSTEMD_EDITOR`, `$PAGER` or `systemd-run`) are no longer executed
 
 **[DPDK](https://www.dpdk.org/)** (`lib/ethdev`, `app/testpmd`), 18 patches merged into DPDK main for the 26.11 release (since v26.11-rc1):
 - Public API to decode pluggable module EEPROM (SFP/QSFP): `rte_eth_module_eeprom_parse()`
