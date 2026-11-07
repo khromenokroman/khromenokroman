@@ -80,6 +80,10 @@ I also contribute upstream to the projects I use at work.
 - [Valid C++ identifiers for argument names in the `xml2cpp` code generator](https://github.com/Kistler-Group/sdbus-cpp/pull/556),
   with compile tests for the generated bindings
   (fixes [#550](https://github.com/Kistler-Group/sdbus-cpp/issues/550))
+- [Convenience API for watching property changes](https://github.com/Kistler-Group/sdbus-cpp/pull/557):
+  `IProxy::uponPropertyChange()` subscribes to `PropertiesChanged` for a single property
+  and delivers its typed value, or `std::optional<T>` for invalidated properties
+  (fixes [#500](https://github.com/Kistler-Group/sdbus-cpp/issues/500))
 
 **[Eclipse iceoryx](https://github.com/eclipse-iceoryx/iceoryx)** (zero-copy IPC):
 [`ssize_t` refactoring for Windows compatibility](https://github.com/eclipse-iceoryx/iceoryx/pull/2342)
