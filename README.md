@@ -65,6 +65,9 @@ I also contribute upstream to the projects I use at work.
 **[Clixon](https://github.com/clicon/clixon)** (NETCONF/RESTCONF/YANG):
 - [Replace `select()` with `poll()` in the event loop](https://github.com/clicon/clixon/pull/584)
 - [`cli_start_program()`: run external programs (Python, Bash) from the CLI](https://github.com/clicon/clixon/pull/522)
+- [`clixon_cli -e`: exit on the first failed command](https://github.com/clicon/clixon/pull/709):
+  scripts run from stdin or a file (`-F`) stop at the first command that fails to parse or whose
+  validate/commit fails, and exit with an error instead of applying a partial configuration
 - In review: [XPath](https://github.com/clicon/clixon/pull/703) and
   [leafref](https://github.com/clicon/clixon/pull/700) validation fixes,
   [NACM group lookup helpers](https://github.com/clicon/clixon/pull/697)
