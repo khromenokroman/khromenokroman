@@ -68,8 +68,8 @@ I also contribute upstream to the projects I use at work.
 - [`clixon_cli -e`: exit on the first failed command](https://github.com/clicon/clixon/pull/709):
   scripts run from stdin or a file (`-F`) stop at the first command that fails to parse or whose
   validate/commit fails, and exit with an error instead of applying a partial configuration
-- In review: [XPath](https://github.com/clicon/clixon/pull/703) and
-  [leafref](https://github.com/clicon/clixon/pull/700) validation fixes,
+- [XPath `mod` with a zero divisor no longer crashes (SIGFPE); `xml_diff()` handles an empty first tree](https://github.com/clicon/clixon/pull/703)
+- In review: [leafref validation fixes](https://github.com/clicon/clixon/pull/700),
   [NACM group lookup helpers](https://github.com/clicon/clixon/pull/697)
 
 **[CLIgen](https://github.com/clicon/cligen)**:
