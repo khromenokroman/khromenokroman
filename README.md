@@ -87,6 +87,10 @@ I also contribute upstream to the projects I use at work.
   `IProxy::uponPropertyChange()` subscribes to `PropertiesChanged` for a single property
   and delivers its typed value, or `std::optional<T>` for invalidated properties
   (fixes [#500](https://github.com/Kistler-Group/sdbus-cpp/issues/500))
+- [Typed property value in the `getPropertyAsync()` callback](https://github.com/Kistler-Group/sdbus-cpp/pull/559):
+  the reply handler may take the property value as `T` instead of `sdbus::Variant`,
+  type mismatches are reported through the `std::optional<Error>` parameter
+  (fixes [#552](https://github.com/Kistler-Group/sdbus-cpp/issues/552))
 
 **[Eclipse iceoryx](https://github.com/eclipse-iceoryx/iceoryx)** (zero-copy IPC):
 [`ssize_t` refactoring for Windows compatibility](https://github.com/eclipse-iceoryx/iceoryx/pull/2342)
