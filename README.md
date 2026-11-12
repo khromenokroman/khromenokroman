@@ -49,7 +49,7 @@ I also contribute upstream to the projects I use at work.
   all remaining callers converted, so a truncated binary is never run as an empty shell script via `/bin/sh`;
   scripts without a shebang (e.g. via `$SYSTEMD_EDITOR`, `$PAGER` or `systemd-run`) are no longer executed
 
-**[DPDK](https://www.dpdk.org/)** (`lib/ethdev`, `app/testpmd`), 18 patches merged into DPDK main for the 26.11 release (since v26.11-rc1):
+**[DPDK](https://www.dpdk.org/)** (`lib/ethdev`, `app/testpmd`, `app/proc-info`), 19 patches merged into DPDK main for the 26.11 release:
 - Public API to decode pluggable module EEPROM (SFP/QSFP): `rte_eth_module_eeprom_parse()`
 - testpmd command `show port <id> module_eeprom decode`
 - SFF-8636 per-lane LOS / LOL / Tx fault flags, SFF-8472 Rx LOS and Tx fault state
@@ -57,7 +57,9 @@ I also contribute upstream to the projects I use at work.
 - Decoder fixes: out-of-bounds read of SFF-8636 thresholds, unaligned access, undefined behavior
   in SFF-8472 external calibration, Rx power calibration and rounding
   (the out-of-bounds read and SFF-8472 calibration fixes are backported to the 24.11 LTS branch, 24.11.9)
-- In review: RFC to move the decoders into a new `lib/transceiver` library (to be maintained by me),
+- `dpdk-proc-info --show-module-eeprom`: one port without a module no longer hides the modules
+  of the next ports, EEPROM length reported by the driver is checked against the buffer
+- In review: new `lib/transceiver` library for the decoders (to be maintained by me),
   module EEPROM decoding in `dpdk-proc-info`
 
 [All DPDK patches](https://patches.dpdk.org/project/dpdk/list/?submitter=3957&state=*)
