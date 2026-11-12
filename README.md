@@ -62,6 +62,12 @@ I also contribute upstream to the projects I use at work.
 
 [All DPDK patches](https://patches.dpdk.org/project/dpdk/list/?submitter=3957&state=*)
 
+**[FRRouting](https://github.com/FRRouting/frr)** (`bgpd`), merged:
+- [bgpd: apply `neighbor soo` to peer-group members](https://github.com/FRRouting/frr/pull/24210):
+  Site-of-Origin set on a peer-group now reaches peers that are already members of the group,
+  not only peers that join it later; covered by a new case in the `bgp_soo` topotest
+  (fixes [#24209](https://github.com/FRRouting/frr/issues/24209))
+
 **[Clixon](https://github.com/clicon/clixon)** (NETCONF/RESTCONF/YANG):
 - [Replace `select()` with `poll()` in the event loop](https://github.com/clicon/clixon/pull/584)
 - [`cli_start_program()`: run external programs (Python, Bash) from the CLI](https://github.com/clicon/clixon/pull/522)
