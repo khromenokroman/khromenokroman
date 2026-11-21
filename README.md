@@ -34,6 +34,10 @@ I also contribute upstream to the projects I use at work.
   the address generation mode reset by the WireGuard driver on every link up is restored, so routing
   protocols like Babel work over WireGuard out of the box
   (fixes [#44005](https://github.com/systemd/systemd/issues/44005))
+- [networkd: also set `force_forwarding` sysctl for `IPv6Forwarding=`](https://github.com/systemd/systemd/pull/44632):
+  per-interface IPv6 forwarding now works on Linux 6.17+ even when global forwarding is disabled,
+  including forwarding implied by `IPMasquerade=` and `IPv6SendRA=`
+  (fixes [#40666](https://github.com/systemd/systemd/issues/40666))
 - [DHCP server: do not refuse a host with a static lease whose client ID changed](https://github.com/systemd/systemd/pull/44188):
   the host gets its static address again instead of being ignored until the old lease expires
   (fixes [#44120](https://github.com/systemd/systemd/issues/44120))
