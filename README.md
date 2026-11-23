@@ -103,6 +103,10 @@ I also contribute upstream to the projects I use at work.
   the reply handler may take the property value as `T` instead of `sdbus::Variant`,
   type mismatches are reported through the `std::optional<Error>` parameter
   (fixes [#552](https://github.com/Kistler-Group/sdbus-cpp/issues/552))
+- [Generated property change handlers in proxies](https://github.com/Kistler-Group/sdbus-cpp/pull/560):
+  `xml2cpp` generates `on<Property>PropertyChanged()` handlers that receive the new value
+  or `std::nullopt` for an invalidated property, covered by compile and integration tests
+  (implements [#500](https://github.com/Kistler-Group/sdbus-cpp/issues/500))
 
 **[Eclipse iceoryx](https://github.com/eclipse-iceoryx/iceoryx)** (zero-copy IPC):
 [`ssize_t` refactoring for Windows compatibility](https://github.com/eclipse-iceoryx/iceoryx/pull/2342)
