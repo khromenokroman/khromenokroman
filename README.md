@@ -107,6 +107,10 @@ I also contribute upstream to the projects I use at work.
   `xml2cpp` generates `on<Property>PropertyChanged()` handlers that receive the new value
   or `std::nullopt` for an invalidated property, covered by compile and integration tests
   (implements [#500](https://github.com/Kistler-Group/sdbus-cpp/issues/500))
+- [Custom timeout for property setting](https://github.com/Kistler-Group/sdbus-cpp/pull/563):
+  `withTimeout()` configures synchronous and asynchronous property set calls,
+  including callback-, future- and awaitable-based APIs
+  (fixes [#561](https://github.com/Kistler-Group/sdbus-cpp/issues/561))
 
 **[Eclipse iceoryx](https://github.com/eclipse-iceoryx/iceoryx)** (zero-copy IPC):
 [`ssize_t` refactoring for Windows compatibility](https://github.com/eclipse-iceoryx/iceoryx/pull/2342)
