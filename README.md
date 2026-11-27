@@ -53,20 +53,21 @@ I also contribute upstream to the projects I use at work.
   all remaining callers converted, so a truncated binary is never run as an empty shell script via `/bin/sh`;
   scripts without a shebang (e.g. via `$SYSTEMD_EDITOR`, `$PAGER` or `systemd-run`) are no longer executed
 
-**[DPDK](https://www.dpdk.org/)** (`lib/ethdev`, `app/testpmd`, `app/proc-info`), 19 patches merged into DPDK main for the 26.11 release:
-- Public API to decode pluggable module EEPROM (SFP/QSFP): `rte_eth_module_eeprom_parse()`
+**[DPDK](https://www.dpdk.org/)** (`lib/ethdev`, `app/testpmd`, `app/proc-info`, `devtools`), 19 patches merged as 14 commits into DPDK main for the 26.11 release:
+- Experimental public API to decode pluggable module EEPROM (SFP/QSFP): `rte_eth_module_eeprom_parse()`
 - testpmd command `show port <id> module_eeprom decode`
 - SFF-8636 per-lane LOS / LOL / Tx fault flags, SFF-8472 Rx LOS and Tx fault state
 - Newer SFF compliance codes: Fibre Channel 1600/3200/6400 MBytes/sec, SAS 12G/24G
 - Decoder fixes: out-of-bounds read of SFF-8636 thresholds, unaligned access, undefined behavior
   in SFF-8472 external calibration, Rx power calibration and rounding
-  (the out-of-bounds read and SFF-8472 calibration fixes are backported to the 24.11 LTS branch, 24.11.9)
+  (the out-of-bounds read and SFF-8472 calibration fixes are in the 24.11 LTS branch and 24.11.9-rc1)
 - `dpdk-proc-info --show-module-eeprom`: one port without a module no longer hides the modules
   of the next ports, EEPROM length reported by the driver is checked against the buffer
-- In review: new `lib/transceiver` library for the decoders (to be maintained by me),
-  module EEPROM decoding in `dpdk-proc-info`
+  (also backported to the 24.11 LTS branch and 24.11.9-rc1)
+- `devtools`: fixed false reports of stable ABI symbol removals caused by diff context lines
+  in the symbol change check
 
-[All DPDK patches](https://patches.dpdk.org/project/dpdk/list/?submitter=3957&state=*)
+[All DPDK patches](https://patches.dpdk.org/project/dpdk/list/?submitter=3957&archive=both&state=*) · [Merged DPDK commits](https://github.com/DPDK/dpdk/commits/main/?author=khromenokroman)
 
 **[FRRouting](https://github.com/FRRouting/frr)** (`bgpd`), merged:
 - [bgpd: apply `neighbor soo` to peer-group members](https://github.com/FRRouting/frr/pull/24210):
@@ -74,15 +75,19 @@ I also contribute upstream to the projects I use at work.
   not only peers that join it later; covered by a new case in the `bgp_soo` topotest
   (fixes [#24209](https://github.com/FRRouting/frr/issues/24209))
 
-**[Clixon](https://github.com/clicon/clixon)** (NETCONF/RESTCONF/YANG):
+**[Clixon](https://github.com/clicon/clixon)** (NETCONF/RESTCONF/YANG), merged:
 - [Replace `select()` with `poll()` in the event loop](https://github.com/clicon/clixon/pull/584)
 - [`cli_start_program()`: run external programs (Python, Bash) from the CLI](https://github.com/clicon/clixon/pull/522)
 - [`clixon_cli -e`: exit on the first failed command](https://github.com/clicon/clixon/pull/709):
   scripts run from stdin or a file (`-F`) stop at the first command that fails to parse or whose
   validate/commit fails, and exit with an error instead of applying a partial configuration
 - [XPath `mod` with a zero divisor no longer crashes (SIGFPE); `xml_diff()` handles an empty first tree](https://github.com/clicon/clixon/pull/703)
-- In review: [leafref validation fixes](https://github.com/clicon/clixon/pull/700),
-  [NACM group lookup helpers](https://github.com/clicon/clixon/pull/697)
+- [`xp_ctx` heap overflow: struct layout no longer depends on `XPATH_CURRENT_OPTIMIZE`](https://github.com/clicon/clixon/pull/701):
+  compilation units and external plugins now use the same layout, fixing heap corruption on 32-bit ARM
+  and intermittent incorrect NACM decisions
+  (fixes [#698](https://github.com/clicon/clixon/issues/698))
+- [CLI `compare`: no NULL dereference when `CLICON_CLI_DIFF_FORMAT` is unset](https://github.com/clicon/clixon/pull/719):
+  a missing option is treated as a non-context diff format instead of crashing `clixon_cli`
 
 **[CLIgen](https://github.com/clicon/cligen)**:
 [version target in Makefile](https://github.com/clicon/cligen/pull/118), Debian packages built in CI
